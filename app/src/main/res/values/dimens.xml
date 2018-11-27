@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="Circle">60dp</dimen>
+    <dimen name="RoundedAmplitude">1dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="header_size">50dp</dimen>
+</resources>

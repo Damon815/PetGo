@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="inputStyle">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textColorHint">@color/White</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:background">@drawable/radius</item>
+    </style>
+
+    <declare-styleable name="RoundRectImageView">
+        <attr name="corner" format="dimension"></attr>
+    </declare-styleable>
+
+</resources>

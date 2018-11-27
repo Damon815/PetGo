@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_explore"
+        android:icon="@drawable/ic_explore"
+        android:title="发现" />
+    <item
+    android:id="@+id/navigation_comment"
+    android:icon="@drawable/ic_subject"
+    android:title="萌宠圈" />
+
+    <item
+    android:id="@+id/navigation_account"
+    android:icon="@drawable/ic_account_circle"
+    android:title="我" />
+</menu>

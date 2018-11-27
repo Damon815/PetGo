@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingBottom="15dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="20dp"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp">
+                    <com.szysky.customize.siv.SImageView
+
+                        android:id="@+id/sv_header"
+                        android:layout_width="@dimen/header_size"
+                        android:layout_height="@dimen/header_size"
+                        android:layout_marginLeft="25dp"
+                        app:img="@drawable/tim__20181123004552" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/green"
+                            android:textSize="15dp"
+                            android:layout_gravity="top"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:text="梁胜峰 "/>
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray"
+                            android:textSize="12dp"
+                            android:layout_gravity="top"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:text="2018-11-24 "/>
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <com.example.administrator.pet_go.UI.RoundRectImageview
+                    android:id="@+id/iv_picture"
+                    android:src="@drawable/tim__20181123004552"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:visibility="gone"
+                    android:scaleType="centerInside"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginRight="90dp"
+                    />
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:ellipsize="end"
+                    android:text="以前宠物只是单指人们为了消除孤寂或出于娱乐目的而豢养的动物。现今宠物定义为，出于非经济目的而豢养的动植物。宠物是为了精神的目的而豢养的动植物。一般为了消除孤寂，或娱乐而豢养，以前的宠物一般是哺乳纲或鸟纲的动物，因为这些动物脑子比较发达，容易和人交流。如今，除了广为人知的活体宠物外，还有诸多的虚拟宠物。"/>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:id="@+id/iv_zan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tint="@color/heart"
+                            android:src="@drawable/ic_favorite_black_24dp"
+
+                            />
+                        <TextView
+                            android:id="@+id/tv_like_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="0"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/iv_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:tint="@color/gray"
+                            android:src="@drawable/ic_textsms_black_24dp"
+                            />
+                        <TextView
+                            android:id="@+id/tv_comment_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="0"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/comment_item">
+                </android.support.v7.widget.RecyclerView>
+                <EditText
+                    android:id="@+id/et_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radius"
+                    android:layout_margin="10dp"
+                    android:inputType="text"
+                    android:hint="评论"
+                    android:imeOptions="actionSend"
+                    />
+            </LinearLayout>
+        </ScrollView>
+
+
+        
+
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
