@@ -61,7 +61,14 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <activity android:name=".Pet.RequestMatchActivity" />
-        <activity android:name=".Pet.RequestDetailsActivity"></activity>
+        <activity android:name=".Pet.RequestDetailsActivity" />
+        <activity android:name=".Explore.TestActivity" />
+        <activity android:name=".Pet.MyPetsActivity" />
+        <activity android:name=".Me.MyInfoActivity" />
+        <activity android:name=".Chat.ChatActivity" />
+        <activity android:name=".Chat.ChatListActivity"></activity>
+        <activity android:name=".Explore.piDetailsActivity"/>
+
     </application>
 
 </manifest>
