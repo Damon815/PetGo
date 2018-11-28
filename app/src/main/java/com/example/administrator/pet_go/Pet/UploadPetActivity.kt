@@ -1,33 +1,34 @@
 package com.example.administrator.pet_go.Pet
 
 
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.ColorDrawable
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v4.app.ActivityCompat
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import com.example.administrator.pet_go.R
-import kotlinx.android.synthetic.main.activity_upload_pet.*
-import java.io.File
 import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
-import android.widget.ImageView
-import android.widget.PopupWindow
-import android.widget.TextView
+import android.widget.*
 import com.example.administrator.pet_go.JavaBean.Pet
 import com.example.administrator.pet_go.Main.MainActivity
+import com.example.administrator.pet_go.R
 import com.example.administrator.pet_go.Util.DataUtil
 import com.example.administrator.pet_go.Util.ImageUtils
 import com.example.administrator.pet_go.Util.PictureUploadUtils
 import com.google.gson.Gson
+import com.google.gson.JsonParser
+import com.google.gson.reflect.TypeToken
+import kotlinx.android.synthetic.main.activity_upload_pet.*
 import org.jetbrains.anko.*
+import java.io.File
 import java.net.URL
 import java.net.URLEncoder
 
@@ -40,25 +41,47 @@ class UploadPetActivity : AppCompatActivity() {
     private lateinit var tempFile: File
     private var upload_picture:ArrayList<String> = ArrayList()
 
+    private var types: ArrayList<String> = ArrayList<String>()
+    private var varieties: ArrayList<ArrayList<String>> = ArrayList()
     private lateinit var currentImageView: ImageView
     private lateinit var nextImageView: ImageView
+    private lateinit var selected_type: String
+    private lateinit var selected_variety: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_pet)
 
-
-
         var pet_sex:String = ""
+
+        val gson = Gson()
+//        val json = gson.toJson(DataUtil.petData)
+        val jsonParse = JsonParser()
+
+        val asJsonArray = jsonParse.parse(DataUtil.petData).asJsonArray
+
+        for (jsonElement in asJsonArray) {
+            val asJsonObject = jsonElement.asJsonObject
+            val type = asJsonObject.get("type").asString
+            types.add(type)
+            val variety = asJsonObject.get("variety")
+            val v = gson.fromJson<ArrayList<String>>(variety, object : TypeToken<ArrayList<String>>(){}.type)
+            varieties.add(v)
+        }
+
+        val arrayAdapter = ArrayAdapter<String>(this,R.layout.spinner_item,R.id.text)
+        arrayAdapter.addAll(types)
+        sp_type.adapter = arrayAdapter
+
+        val arrayAdapter2 = ArrayAdapter<String>(this,R.layout.spinner_item,R.id.text)
+        val sp_variety_view = findViewById<Spinner>(R.id.sp_variety)
+        arrayAdapter2.addAll(varieties[0])
+        sp_variety.adapter = arrayAdapter2
         rg_pet_sex.setOnCheckedChangeListener { group, checkedId ->
              pet_sex = when (checkedId){
                 R.id.rb_pet_male -> "公"
                  else -> "母"
             }
         }
-
-
-
-
 
 
         iv_picture1.setOnClickListener {
@@ -78,6 +101,21 @@ class UploadPetActivity : AppCompatActivity() {
             showPopwindow( )
         }
 
+        sp_type.onItemSelectedListener {
+            onItemSelected { adapterView, view, i, l ->
+                selected_type = types[i]
+                val arrayAdapter2 = ArrayAdapter<String>(this@UploadPetActivity,R.layout.spinner_item,R.id.text)
+                arrayAdapter2.addAll(varieties[i])
+                sp_variety_view.adapter = arrayAdapter2
+            }
+        }
+
+        sp_variety.onItemSelectedListener {
+            onItemSelected { adapterView, view, i, l ->
+                selected_variety = types[i]
+
+            }
+        }
 
         //上传
         iv_pet_share.setOnClickListener {
@@ -85,8 +123,8 @@ class UploadPetActivity : AppCompatActivity() {
             val user_id = sharedPreferences.getString("user_id","")
 
             val pet_name  = et_pet_name.text.toString()
-            val pet_type = et_pet_type.text.toString()
-            val pet_variety = et_pet_variety.text.toString()
+            val pet_type = selected_type
+            val pet_variety = selected_variety
             val pet_age = et_pet_age.text.toString()
             val pet_describe = et_pet_share.text.toString()
             val pet = Pet()
@@ -155,15 +193,20 @@ class UploadPetActivity : AppCompatActivity() {
     }
     private fun getFromCamera() {
 
+        ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.CAMERA), 1)
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)//调用android自带的照相机
         val photoUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         startActivityForResult(intent, cameraCode)
+
     }
 
 
 
     private fun getFromAblum() {
 
+        ActivityCompat.requestPermissions(this,
+                arrayOf( Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(intent, ablumCode)
 

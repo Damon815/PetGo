@@ -1,31 +1,121 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.pet_go.Me.MeFragment">
+    tools:context=".MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:orientation="vertical">
-        <TextView
+        android:divider="@drawable/divider"
+        android:showDividers="middle"
+        android:id="@+id/my_body">
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20dp"
+            android:layout_height="135dp"
             android:paddingBottom="20dp"
-            android:text="me" />
+            android:background="@color/colorPrimary"
+            >
 
-        <Button
-            android:id="@+id/btn_upload_pet"
+            <ImageView
+                android:src="@drawable/ic_account_circle"
+                android:id="@+id/sv_me_head"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center" />
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="PetGo"
+                android:textColor="#FFFF"
+                android:textSize="24dp"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/pet_upload"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_file_upload_black_24dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:text="上传宠物"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/my_quest"
+            android:layout_marginLeft="20dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_access_time_black_24dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:text="请求列表"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/my_pet"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_accessibility_black_24dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:text="我的宠物"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/return_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/radius"
-            android:backgroundTint="@color/White"
-            android:gravity="center"
             android:layout_gravity="center"
-            android:text="上传宠物"
+            android:background="@drawable/ic_reply_black_24dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:text="退出登录"
             />
     </LinearLayout>
-
-</FrameLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

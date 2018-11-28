@@ -6,16 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
      >
-
-    <android.support.v7.widget.RecyclerView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:id="@+id/list_moment"
-        app:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/fragment_item"
-        ></android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/list_moment"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/fragment_item"
+            ></android.support.v7.widget.RecyclerView>
+
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fb_add"

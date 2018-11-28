@@ -71,11 +71,11 @@ public class Pet implements Serializable {
         this.age = age;
     }
 
-    public List getPicture() {
+    public List<String> getPicture() {
         return picture;
     }
 
-    public void setPicture(List picture) {
+    public void setPicture(List<String> picture) {
         this.picture = picture;
     }
 

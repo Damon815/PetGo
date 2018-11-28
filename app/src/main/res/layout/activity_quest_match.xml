@@ -11,16 +11,37 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:textSize="20dp"
+        android:textColor="@color/White"
         android:background="@color/colorPrimary"
         android:text="配对申请"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_request_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tv_none"
-        tools:listitem="@layout/request_list_item"
-        >
-    </android.support.v7.widget.RecyclerView>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_none"
+            >
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_request_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/request_list_item"
+                    >
+                </android.support.v7.widget.RecyclerView>
+
+            </ScrollView>
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>

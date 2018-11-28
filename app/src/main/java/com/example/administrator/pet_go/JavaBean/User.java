@@ -1,7 +1,9 @@
 package com.example.administrator.pet_go.JavaBean;
 
 
-public class User   {
+import java.io.Serializable;
+
+public class User  implements Serializable {
     private String uid;
     private String name;
     private String password;

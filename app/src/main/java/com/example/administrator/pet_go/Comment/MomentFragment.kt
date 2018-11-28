@@ -8,6 +8,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
+import android.support.v4.widget.SwipeRefreshLayout
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -21,9 +22,6 @@ import kotlinx.android.synthetic.main.fragment_item_list.*
 import org.jetbrains.anko.async
 import org.jetbrains.anko.uiThread
 import java.net.URL
-
-
-import java.util.ArrayList
 
 /**
  * Created by Administrator on 2018/11/24/024.
@@ -40,29 +38,23 @@ class MomentFragment : Fragment {
         this.context = context
     }
 
+    private lateinit var list: ArrayList<Moment>
+    private lateinit var momentAdapter: MomentAdapter
     private val host = "${DataUtil.host}/moment"
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_item_list, container, false)
 
-        val gson = Gson()
 
-        async {
-            val preferences = container?.context?.getSharedPreferences("userinfo",Context.MODE_PRIVATE)
-            val user_id = preferences?.getString("user_id","")
-            val url  = "$host?uid=$user_id"
-            val response = URL(url).readText()
-            uiThread {
-                Log.d("json----",response)
-                val list: ArrayList<Moment> = gson.fromJson(response, object :TypeToken<ArrayList<Moment>>(){}.type)
-                for (moment in list) {
-                    Log.d("list",moment.content)
-                }
+        getData()//获取数据
+        //显示数据
 
-                val momentAdapter = MomentAdapter(context, list)
-                list_moment.adapter = momentAdapter
-//                momentAdapter.notifyDataSetChanged()
-            }
+        val refreshView = view.findViewById<SwipeRefreshLayout>(R.id.refresh)
+        refreshView.setOnRefreshListener {
+            getData()
+            momentAdapter.notifyDataSetChanged()
+            refreshView.isRefreshing = false
         }
+
         val add = view.findViewById<FloatingActionButton>(R.id.fb_add)
         add.setOnClickListener {
             val intent = Intent()
@@ -72,5 +64,25 @@ class MomentFragment : Fragment {
         return view
     }
 
+    private fun getData(){
+        async {
+            val gson = Gson()
+            val preferences = context.getSharedPreferences("userinfo", Context.MODE_PRIVATE)
+            val user_id = preferences?.getString("user_id","")
+            val url  = "$host?uid=$user_id"
+            val response = URL(url).readText()
+            uiThread {
+                Log.d("json----",response)
+                list  = gson.fromJson(response, object : TypeToken<ArrayList<Moment>>(){}.type)
+                for (moment in list) {
+                    Log.d("list",moment.content)
+                }
+                momentAdapter = MomentAdapter(context, list)
+                list_moment.adapter = momentAdapter
+            }
+        }
+//        momentAdapter.notifyDataSetChanged()
+
+    }
 
 }

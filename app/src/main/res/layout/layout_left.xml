@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navajowhite"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/pickout"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+    <!--<EditText-->
+        <!--android:id="@+id/type"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="种类（猫、狗等）"-->
+        <!--android:layout_marginLeft="0dp"-->
+        <!--/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="种类"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/text_type"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="16sp"/>
+
+        <Spinner
+            android:prompt="@string/pick0"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/spinner0"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="品种"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/text_variety"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="16sp"/>
+
+        <Spinner
+            android:prompt="@string/pick1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/spinner1"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="性别"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/text_sex"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="16sp"/>
+
+
+
+        <Spinner
+            android:prompt="@string/pick2"
+            android:id="@+id/spinner2"
+            android:entries="@array/sex"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+
+        </Spinner>
+    </LinearLayout>
+
+
+    <!--<EditText-->
+        <!--android:id="@+id/variety"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="品种（哈士奇、布偶猫等）"-->
+        <!--android:layout_marginLeft="0dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--/>-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/sex"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="性别（雄/雌）"-->
+        <!--android:layout_marginLeft="0dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--/>-->
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="20dp"
+        android:hint="年龄（阿拉伯数字）"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/province"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="20dp"
+        android:hint="省（如：山东省）"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="20dp"
+        android:hint="市（如：济南市）"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/sure"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_style"
+            android:textSize="18sp"
+            android:text="确定"/>
+
+        <Button
+            android:id="@+id/close"
+            android:layout_width="25dp"
+            android:layout_height="45dp"
+            android:background="@drawable/close"
+            android:layout_alignParentRight="true"
+
+            />
+
+    </RelativeLayout>
+
+
+    <!--<Button-->
+        <!--android:id="@+id/search_btn"-->
+        <!--android:layout_width="95dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:text="搜索"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:background="@drawable/button_style"-->
+        <!--android:textColor="@android:color/white" />-->
+
+
+
+
+
+
+
+
+</LinearLayout>

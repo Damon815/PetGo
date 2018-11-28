@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.petgo.Activity.piDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:id="@+id/pictures"></ListView>
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/usersex"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/userage"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/typeANDvariety"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+            <TextView
+                android:id="@+id/sex"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+            <TextView
+                android:id="@+id/note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:id="@+id/match"
+                    android:layout_width="115dp"
+                    android:layout_height="55dp"
+                    android:textColor="@color/orangered"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/button_style0"
+                    android:textSize="18sp"
+                    android:text="申请配对"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

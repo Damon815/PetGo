@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
@@ -15,12 +14,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import com.amap.api.location.AMapLocation
 import com.amap.api.location.AMapLocationClient
 import com.amap.api.location.AMapLocationClientOption
 import com.amap.api.location.AMapLocationListener
-
 import com.example.administrator.pet_go.R
 import com.example.administrator.pet_go.Util.DataUtil
 import org.jetbrains.anko.async
@@ -43,6 +40,8 @@ class ExploreFragment (val context: Activity): Fragment() {
     lateinit var address_show: TextView
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
+
         // Inflate the layout for this fragment
         val inflate = inflater.inflate(R.layout.fragment_explore, container, false)
         address_show = inflate.findViewById(R.id.tv_address)

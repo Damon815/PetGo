@@ -75,7 +75,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/radius"
+                android:visibility="gone"
                 android:layout_weight="1"/>
+
+            <Spinner
+                android:id="@+id/sp_type"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radius"
+                android:entries="@array/pet_type"
+                android:layout_height="wrap_content">
+            </Spinner>
         </LinearLayout>
 
         <LinearLayout
@@ -95,7 +105,16 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/radius"
                 android:id="@+id/et_pet_variety"
+                android:visibility="gone"
                 android:layout_weight="1"/>
+            <Spinner
+                android:id="@+id/sp_variety"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radius"
+                android:entries="@array/pet_type"
+                android:layout_height="wrap_content">
+            </Spinner>
         </LinearLayout>
 
         <LinearLayout

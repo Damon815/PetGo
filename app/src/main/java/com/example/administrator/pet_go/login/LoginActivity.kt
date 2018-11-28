@@ -2,21 +2,16 @@ package com.example.administrator.pet_go.login
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
 import com.example.administrator.pet_go.Main.MainActivity
 import com.example.administrator.pet_go.R
 import com.example.administrator.pet_go.Util.DataUtil
 import com.example.administrator.pet_go.Util.SendMessageUtil
-
 import com.example.administrator.pet_go.verify.EmailVerify
-import com.example.administrator.pet_go.verify.PasswordVerify
-import com.example.administrator.pet_go.verify.UserVerify
 import com.example.administrator.pet_go.verify.verify
-import com.ohmerhe.kolley.request.Http
 import kotlinx.android.synthetic.main.login.*
 import org.jetbrains.anko.async
 import org.jetbrains.anko.toast
@@ -36,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
         Log.d("user_id",user_id)
         if (!user_id.isEmpty()){
 
-            toMain()
+//            toMain()
         }
 
 

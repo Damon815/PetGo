@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="20:00"
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:id="@+id/chat_you"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/you_head"
+            android:layout_width="@dimen/header_size"
+            android:layout_height="@dimen/header_size"
+            android:src="@drawable/ic_account_circle_black_24dp"
+            />
+        <Button
+            android:id="@+id/you_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_you_box"
+            android:text=""
+            />
+    </LinearLayout>
+    <LinearLayout
+       android:id="@+id/chat_me"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="right"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/me_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_box"
+            android:text="hello"
+            />
+        <ImageView
+            android:id="@+id/me_head"
+            android:layout_width="@dimen/header_size"
+            android:layout_height="@dimen/header_size"
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:layout_gravity="right"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

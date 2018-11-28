@@ -38,7 +38,7 @@
         android:layout_width="@dimen/Circle"
         android:layout_height="@dimen/Circle"
         android:layout_marginTop="8dp"
-        app:img="@drawable/ic_launcher_background"
+        app:img="@drawable/ic_account_circle"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />

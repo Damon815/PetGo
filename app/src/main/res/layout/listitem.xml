@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/My_Linear"
+    android:fastScrollEnabled="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:fastScrollEnabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:fastScrollEnabled="false"
+            android:id="@+id/img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp" />
+
+        <LinearLayout
+            android:fastScrollEnabled="false"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:fastScrollEnabled="false"
+                android:id="@+id/text_name"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#000000"
+                android:textSize="13sp" />
+
+            <TextView
+                android:fastScrollEnabled="false"
+                android:id="@+id/text_variety"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+            <TextView
+                android:fastScrollEnabled="false"
+                android:id="@+id/text_sex"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+            <TextView
+                android:fastScrollEnabled="false"
+                android:id="@+id/text_age"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
