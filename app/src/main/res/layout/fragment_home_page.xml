@@ -35,7 +35,7 @@
                 android:id="@+id/open"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="@drawable/pic1" />
+                android:background="@drawable/pick1" />
 
 
         </android.support.v7.widget.Toolbar>
